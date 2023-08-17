@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "985768952453",
+    "project_id": "management-app-9e566",
+    "storage_bucket": "management-app-9e566.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:985768952453:android:e0213be93528a5d399dfec",
+        "android_client_info": {
+          "package_name": "com.dannijanni.management_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "985768952453-a9spirefi39ll3vbimcg0ud34d99pagb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dannijanni.management_app",
+            "certificate_hash": "58ff87493aca9090a2fcdc241b383ddb46af6602"
+          }
+        },
+        {
+          "client_id": "985768952453-61tjcjqjbpkeesndlf3np0r585j0q7t6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC69RcDY1tEDdr64yea-7TaB8fIren4GZ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "985768952453-61tjcjqjbpkeesndlf3np0r585j0q7t6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
