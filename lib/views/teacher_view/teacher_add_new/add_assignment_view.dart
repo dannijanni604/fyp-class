@@ -3,8 +3,8 @@ import 'package:first_platoon/core/components/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AddTasksView extends StatelessWidget {
-  AddTasksView({super.key});
+class AddAssignmentView extends StatelessWidget {
+  AddAssignmentView({super.key});
 
   final ctrl = Get.find<AddCompaignsConteroller>();
   @override
@@ -18,7 +18,7 @@ class AddTasksView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text("Task"),
+              const Text("Assignment Details"),
               SizedBox(
                 height: size.height * 0.01,
               ),
@@ -26,7 +26,7 @@ class AddTasksView extends StatelessWidget {
                 controller: ctrl.taskTaskController,
                 validator: (val) {
                   if (val == null || val.isEmpty) {
-                    return "Enter Task Name";
+                    return "Enter Assignment Name";
                   } else {
                     return null;
                   }
@@ -62,7 +62,7 @@ class AddTasksView extends StatelessWidget {
                 },
               ),
               SizedBox(height: size.height * 0.03),
-              const Text("Add Members"),
+              const Text("Add Students"),
               SizedBox(
                 height: size.height * 0.01,
               ),
@@ -92,7 +92,7 @@ class AddTasksView extends StatelessWidget {
               ),
               TextFormField(
                 decoration: const InputDecoration(
-                  hintText: "search members here",
+                  hintText: "search students here",
                 ),
                 controller: ctrl.taskMemberController,
                 onChanged: (v) {
@@ -127,7 +127,7 @@ class AddTasksView extends StatelessWidget {
                       );
                     }
                     return const Center(
-                      child: Text("No User"),
+                      child: Text("No Students"),
                     );
                   },
                   onEmpty: const Center(
@@ -149,7 +149,7 @@ class AddTasksView extends StatelessWidget {
                                 onPressed: () {
                                   ctrl.addTask();
                                 },
-                                label: "Generate Task",
+                                label: "Generate Assignment",
                                 padding:
                                     const EdgeInsets.symmetric(vertical: 15),
                               ),

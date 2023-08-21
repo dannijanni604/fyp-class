@@ -1,16 +1,16 @@
 import 'package:first_platoon/core/functions.dart';
-import 'package:first_platoon/views/user_view/user_task/user_hitlist_tabs.dart';
-import 'package:first_platoon/views/user_view/user_schedule_view.dart';
+import 'package:first_platoon/views/student_view/student_assignments/student_assignment_tabs.dart';
+import 'package:first_platoon/views/student_view/student_quiz_view.dart';
 import 'package:flutter/material.dart';
 
-class UserHomeView extends StatefulWidget {
-  const UserHomeView({super.key});
+class StudenthHomeView extends StatefulWidget {
+  const StudenthHomeView({super.key});
 
   @override
-  State<UserHomeView> createState() => _UserHomeViewState();
+  State<StudenthHomeView> createState() => _StudenthHomeViewState();
 }
 
-class _UserHomeViewState extends State<UserHomeView> {
+class _StudenthHomeViewState extends State<StudenthHomeView> {
   int pageIndex = 0;
   @override
   Widget build(BuildContext context) {
@@ -20,8 +20,8 @@ class _UserHomeViewState extends State<UserHomeView> {
         body: IndexedStack(
           index: pageIndex,
           children: const [
-            UserScheduleView(),
-            UserHitlistView(),
+            StudentQuizView(),
+            StudentAssignmentTabs(),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -33,9 +33,9 @@ class _UserHomeViewState extends State<UserHomeView> {
           currentIndex: pageIndex,
           items: const [
             BottomNavigationBarItem(
-                icon: Icon(Icons.arrow_circle_up_rounded), label: "Schedule"),
+                icon: Icon(Icons.arrow_circle_up_rounded), label: "Quiz"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.arrow_circle_up_rounded), label: "Task"),
+                icon: Icon(Icons.arrow_circle_up_rounded), label: "Assignmnt"),
           ],
         ),
       ),

@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:first_platoon/controllers/admin_controller.dart';
 import 'package:first_platoon/controllers/manage_controller.dart';
 import 'package:first_platoon/core/components/app_button.dart';
@@ -7,12 +6,12 @@ import 'package:first_platoon/core/components/app_tile.dart';
 import 'package:first_platoon/core/components/snackbar.dart';
 import 'package:first_platoon/core/const.dart';
 import 'package:first_platoon/core/db.dart';
-import 'package:first_platoon/views/admin_view/admin_manage/admin_document_view.dart';
+import 'package:first_platoon/views/teacher_view/teacher_manage/teacher_document_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AdminManageTaskView extends StatelessWidget {
-  AdminManageTaskView({super.key});
+class TeacherManageAssignmentsView extends StatelessWidget {
+  TeacherManageAssignmentsView({super.key});
   final adminCtrl = Get.find<AdminController>();
   final ctrl = Get.put(ManageController());
 
@@ -96,7 +95,7 @@ Future showDialogToCompleteTask(
             borderRadius: BorderRadius.circular(10),
           ),
           child: Container(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
@@ -164,10 +163,10 @@ Future showDialogToCompleteTask(
                           });
                           Get.back();
                           ksucessSnackbar(
-                            message: "Approved Task",
+                            message: "Approved Assignment",
                           );
                         },
-                        label: "Approve",
+                        label: "Accept",
                         color: Colors.green.shade400),
                     kAppButton(
                         onPressed: () {
@@ -175,9 +174,9 @@ Future showDialogToCompleteTask(
                             'status': null,
                           });
                           Get.back();
-                          kerrorSnackbar(message: "Disapproved task");
+                          ksucessSnackbar(message: "Disapproved Assignment");
                         },
-                        label: "Disapprove",
+                        label: "Reject",
                         color: Colors.red.shade400)
                   ],
                 ),

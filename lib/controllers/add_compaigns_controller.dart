@@ -22,14 +22,14 @@ class AddCompaignsConteroller extends GetxController with StateMixin {
   RxList<Map<String, dynamic>> taskMembers = RxList<Map<String, dynamic>>([]);
   final authId = FirebaseAuth.instance.currentUser!.uid;
 
-// Schedule
+// Quiz
   final scheduleTaskController = TextEditingController();
   final scheduledateController = TextEditingController();
   DateTimeRange? scheduledDateTime;
   final scheduleMemberController = TextEditingController();
   final scheduleformkey = GlobalKey<FormState>();
 
-  // Task
+  // Assignment
   final taskTaskController = TextEditingController();
   final taskdueDateController = TextEditingController();
   final taskMemberController = TextEditingController();
@@ -62,7 +62,7 @@ class AddCompaignsConteroller extends GetxController with StateMixin {
               scheduleMembers.map((e) => e['id']).toList()),
         },
       );
-      ksucessSnackbar(message: "Schedule Added Successfuly");
+      ksucessSnackbar(message: "Quiz Added Successfuly");
       scheduleTaskController.clear();
       scheduleMemberController.clear();
       scheduleMembers.clear();
@@ -94,7 +94,7 @@ class AddCompaignsConteroller extends GetxController with StateMixin {
               'status': null,
             },
           );
-          ksucessSnackbar(message: "Task Added Successfully");
+          ksucessSnackbar(message: "Assignment Added Successfully");
           taskTaskController.clear();
           taskdueDateController.clear();
           taskMemberController.clear();
@@ -106,7 +106,7 @@ class AddCompaignsConteroller extends GetxController with StateMixin {
           indicator(false);
         }
       } else {
-        kerrorSnackbar(message: "Enter Task Member List");
+        kerrorSnackbar(message: "Enter Assignment Member List");
       }
     }
   }

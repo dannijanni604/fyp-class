@@ -1,10 +1,10 @@
 import 'package:first_platoon/core/theme.dart';
-import 'package:first_platoon/views/user_view/user_task/user_hitlist_history_view.dart';
-import 'package:first_platoon/views/user_view/user_task/user_hitlist_task_view.dart';
+import 'package:first_platoon/views/student_view/student_assignments/student_assignment_history_view.dart';
+import 'package:first_platoon/views/student_view/student_assignments/student_assignment_view.dart';
 import 'package:flutter/material.dart';
 
-class UserHitlistView extends StatelessWidget {
-  const UserHitlistView({super.key});
+class StudentAssignmentTabs extends StatelessWidget {
+  const StudentAssignmentTabs({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,18 +19,18 @@ class UserHitlistView extends StatelessWidget {
           title: const TabBar(
             tabs: [
               Tab(
-                text: "Task",
+                text: "Assignments",
               ),
               Tab(
-                text: "Task History",
+                text: "History",
               ),
             ],
           ),
         ),
         body: const TabBarView(
           children: [
-            UserHitListTaskView(),
-            UserHitListHistoryView(),
+            StudentAssignmentView(),
+            StudentAssignmentHistoryView(),
           ],
         ),
       ),

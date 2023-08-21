@@ -1,21 +1,21 @@
 import 'package:first_platoon/controllers/auth_controller.dart';
-import 'package:first_platoon/core/app_navigator.dart';
 import 'package:first_platoon/core/components/app_button.dart';
 import 'package:first_platoon/core/components/qr_scanner_view.dart';
 import 'package:first_platoon/core/const.dart';
-import 'package:first_platoon/views/auth_views/admin_login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AdminSignUpView extends StatelessWidget {
-  const AdminSignUpView({super.key});
+class TeacherSignUpView extends StatelessWidget {
+  const TeacherSignUpView({super.key});
 
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
     final ctrl = Get.put(AuthController());
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text("Register As Teacher"),
+      ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
@@ -25,7 +25,7 @@ class AdminSignUpView extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 SizedBox(height: Get.size.height * 0.03),
-                Text("Welcome To Management App", style: Const.labelText()),
+                Text("Welcome To Class Guide", style: Const.labelText()),
                 SizedBox(height: Get.size.height * 0.03),
                 const Text("Sign Up With Email And Password"),
                 SizedBox(height: Get.size.height * 0.03),
@@ -61,20 +61,7 @@ class AdminSignUpView extends StatelessWidget {
                       TextFormField(
                         controller: ctrl.adminPasswordController,
                         obscureText: true,
-                        decoration: InputDecoration(
-                          errorMaxLines: 2,
-                        ),
-                        validator: (val) {
-                          return Const.validateCode(val!);
-                        },
-                      ),
-                      SizedBox(height: Get.size.height * 0.03),
-                      const Text("Father Name"),
-                      SizedBox(height: Get.size.height * 0.01),
-                      TextFormField(
-                        controller: ctrl.adminPasswordController,
-                        obscureText: true,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           errorMaxLines: 2,
                         ),
                         validator: (val) {

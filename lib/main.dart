@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'package:first_platoon/core/theme.dart';
 import 'package:first_platoon/views/splash_view.dart';
 import 'package:flutter/foundation.dart';
@@ -33,17 +32,12 @@ class ManagementApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // final Color green = Colors.deepOrange;
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: AppTheme.primaryColor,
         fontFamily: "montserrat",
-        // accentIconTheme: IconThemeData(size: 30),
-
         iconTheme: const IconThemeData(size: 30),
-
-        // scaffoldBackgroundColor: Color(0xFFFCFBF4),
         appBarTheme: const AppBarTheme(
           backgroundColor: AppTheme.kprimaryColor,
           elevation: 0,

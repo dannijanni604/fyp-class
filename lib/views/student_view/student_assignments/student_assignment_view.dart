@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:first_platoon/controllers/hitlist_controller.dart';
+import 'package:first_platoon/controllers/assignment_controller.dart';
 import 'package:first_platoon/core/components/app_button.dart';
 import 'package:first_platoon/core/components/app_tile.dart';
 import 'package:first_platoon/core/const.dart';
@@ -11,8 +11,8 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:intl/intl.dart';
 
-class UserHitListTaskView extends StatelessWidget {
-  const UserHitListTaskView({super.key});
+class StudentAssignmentView extends StatelessWidget {
+  const StudentAssignmentView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class UserHitListTaskView extends StatelessWidget {
         if (snapshot.hasData) {
           return snapshot.data!.docs.isEmpty
               ? const Center(
-                  child: Text("No Task"),
+                  child: Text("No Assignment"),
                 )
               : ListView.builder(
                   itemCount: snapshot.data!.docs.length,
@@ -121,7 +121,7 @@ showUserHitlitBottomSheet({
                           ),
                           child: IconButton(
                             onPressed: () {
-                              // ctrl.picDocuments();
+                              ctrl.picDocuments();
                               Get.back();
                             },
                             icon: Icon(
@@ -174,7 +174,7 @@ showUserHitlitBottomSheet({
                           );
                         },
                         padding: const EdgeInsets.symmetric(vertical: 15),
-                        label: "Submit Task"),
+                        label: "Submit Assignment"),
               ],
             ),
           );

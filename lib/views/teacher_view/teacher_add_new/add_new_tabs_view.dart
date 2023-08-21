@@ -1,13 +1,12 @@
-import 'package:first_platoon/views/admin_view/admin_add_new/add_member_view.dart';
-import 'package:first_platoon/views/admin_view/admin_add_new/add_schedule_view.dart';
-import 'package:first_platoon/views/admin_view/admin_add_new/add_tasks_view.dart';
+import 'package:first_platoon/views/teacher_view/teacher_add_new/add_student_view.dart';
+import 'package:first_platoon/views/teacher_view/teacher_add_new/add_quiz_view.dart';
+import 'package:first_platoon/views/teacher_view/teacher_add_new/add_assignment_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../controllers/add_compaigns_controller.dart';
 
-class AdminAddNew extends StatelessWidget {
-  AdminAddNew({super.key});
+class AddNewTabsView extends StatelessWidget {
+  AddNewTabsView({super.key});
 
   final ctrl = Get.put(AddCompaignsConteroller());
 
@@ -21,16 +20,16 @@ class AdminAddNew extends StatelessWidget {
           elevation: 0,
           title: const Text("Add New"),
           bottom: const TabBar(tabs: [
-            Tab(text: "Schedule"),
-            Tab(text: "Tasks"),
-            Tab(text: "Add Member"),
+            Tab(text: "Quiz"),
+            Tab(text: "Assignments"),
+            Tab(text: "Add Student"),
           ]),
         ),
         body: TabBarView(
           children: [
-            AddScheduleView(),
-            AddTasksView(),
-            AddMemberView(),
+            AddQuizView(),
+            AddAssignmentView(),
+            AddStudentView(),
           ],
         ),
       ),

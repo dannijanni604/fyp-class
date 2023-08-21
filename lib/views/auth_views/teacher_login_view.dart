@@ -2,20 +2,22 @@ import 'package:first_platoon/controllers/auth_controller.dart';
 import 'package:first_platoon/core/app_navigator.dart';
 import 'package:first_platoon/core/components/app_button.dart';
 import 'package:first_platoon/core/const.dart';
-import 'package:first_platoon/views/auth_views/admin_forget_password_view.dart';
-import 'package:first_platoon/views/auth_views/admin_signup_view.dart';
+import 'package:first_platoon/views/auth_views/teacher_forget_password_view.dart';
+import 'package:first_platoon/views/auth_views/teacher_signup_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AdminLoginView extends StatelessWidget {
-  const AdminLoginView({super.key});
+class TeacherLogin extends StatelessWidget {
+  const TeacherLogin({super.key});
 
   @override
   Widget build(BuildContext context) {
     final formKey = GlobalKey<FormState>();
     final ctrl = Get.put(AuthController());
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text("Login As Teacher"),
+      ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
@@ -34,7 +36,7 @@ class AdminLoginView extends StatelessWidget {
                 //   ),
                 // ),
                 SizedBox(height: Get.size.height * 0.03),
-                Text("Welcome To Management App", style: Const.labelText()),
+                Text("Welcome To Class Guide", style: Const.labelText()),
                 SizedBox(height: Get.size.height * 0.03),
                 const Text("Login With Email And Password"),
                 SizedBox(height: Get.size.height * 0.03),
@@ -68,26 +70,26 @@ class AdminLoginView extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          // GestureDetector(
-                          //   onTap: () {
-                          //     appNavPush(
-                          //         context, const AdminForgetPasswordView());
-                          //   },
-                          //   child: const Padding(
-                          //     padding: EdgeInsets.symmetric(
-                          //         vertical: 20, horizontal: 20),
-                          //     child: Text(
-                          //       "Forgot Password?",
-                          //       style: TextStyle(
-                          //         color: Colors.blue,
-                          //         decoration: TextDecoration.underline,
-                          //       ),
-                          //     ),
-                          //   ),
-                          // ),
                           GestureDetector(
                             onTap: () {
-                              appNavPush(context, const AdminSignUpView());
+                              appNavPush(
+                                  context, const TeacherForgetPasswordView());
+                            },
+                            child: const Padding(
+                              padding: EdgeInsets.symmetric(
+                                  vertical: 20, horizontal: 20),
+                              child: Text(
+                                "Forgot Password?",
+                                style: TextStyle(
+                                  color: Colors.blue,
+                                  decoration: TextDecoration.underline,
+                                ),
+                              ),
+                            ),
+                          ),
+                          GestureDetector(
+                            onTap: () {
+                              appNavPush(context, const TeacherSignUpView());
                             },
                             child: const Padding(
                               padding: EdgeInsets.symmetric(

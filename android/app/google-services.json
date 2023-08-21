@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "985768952453",
-    "project_id": "management-app-9e566",
-    "storage_bucket": "management-app-9e566.appspot.com"
+    "project_number": "891826957916",
+    "project_id": "class-guide-55243",
+    "storage_bucket": "class-guide-55243.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:985768952453:android:e0213be93528a5d399dfec",
+        "mobilesdk_app_id": "1:891826957916:android:ad1ddb154e6f9c507a0099",
         "android_client_info": {
-          "package_name": "com.dannijanni.management_app"
+          "package_name": "com.classguide.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "985768952453-a9spirefi39ll3vbimcg0ud34d99pagb.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.dannijanni.management_app",
-            "certificate_hash": "58ff87493aca9090a2fcdc241b383ddb46af6602"
-          }
-        },
-        {
-          "client_id": "985768952453-61tjcjqjbpkeesndlf3np0r585j0q7t6.apps.googleusercontent.com",
+          "client_id": "891826957916-r21kub2nashv32k7nf0hr2qf3h5m6cft.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC69RcDY1tEDdr64yea-7TaB8fIren4GZ0"
+          "current_key": "AIzaSyA_ML7qW8PxSbrFGt_HjKMBrrQoctrqPxw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "985768952453-61tjcjqjbpkeesndlf3np0r585j0q7t6.apps.googleusercontent.com",
+              "client_id": "891826957916-r21kub2nashv32k7nf0hr2qf3h5m6cft.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

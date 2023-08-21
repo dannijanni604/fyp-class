@@ -8,8 +8,8 @@ import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:intl/intl.dart';
 
-class UserScheduleView extends StatelessWidget {
-  const UserScheduleView({super.key});
+class StudentQuizView extends StatelessWidget {
+  const StudentQuizView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class UserScheduleView extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: AppTheme.kblueColor,
         automaticallyImplyLeading: false,
-        title: const Text("Schedule"),
+        title: const Text("Quiz"),
         actions: [
           IconButton(
               onPressed: () {
@@ -34,7 +34,7 @@ class UserScheduleView extends StatelessWidget {
         builder: ((context, snapshot) {
           if (snapshot.hasData) {
             return snapshot.data!.docs.isEmpty
-                ? const Center(child: Text("No Schdeule"))
+                ? const Center(child: Text("No Quiz"))
                 : ListView.builder(
                     itemCount: snapshot.data!.docs.length,
                     itemBuilder: ((context, index) {

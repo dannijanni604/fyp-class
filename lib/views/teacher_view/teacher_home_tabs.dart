@@ -1,23 +1,23 @@
 import 'package:first_platoon/controllers/admin_controller.dart';
-import 'package:first_platoon/controllers/schedule_controller.dart';
+import 'package:first_platoon/controllers/quiz_controller.dart';
 import 'package:first_platoon/core/app_navigator.dart';
 import 'package:first_platoon/core/functions.dart';
 import 'package:first_platoon/core/theme.dart';
-import 'package:first_platoon/views/admin_view/admin_add_new/add_admin_view.dart';
+import 'package:first_platoon/views/teacher_view/teacher_add_new/add_new_tabs_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'admin_hitlist_view.dart';
-import 'admin_manage/admin_manage_tabs.dart';
-import 'admin_schedule_view.dart';
+import 'teacher_assignments_view.dart';
+import 'teacher_manage/teacher_manage_tabs.dart';
+import 'teacher_quiz_view.dart';
 
-class AdminHomeView extends StatefulWidget {
-  const AdminHomeView({super.key});
+class TeacherHomeView extends StatefulWidget {
+  const TeacherHomeView({super.key});
 
   @override
-  State<AdminHomeView> createState() => _AdminHomeViewState();
+  State<TeacherHomeView> createState() => _TeacherHomeViewState();
 }
 
-class _AdminHomeViewState extends State<AdminHomeView> {
+class _TeacherHomeViewState extends State<TeacherHomeView> {
   int pageIndex = 0;
   final ctrl = Get.put(ScheduleController());
   final adminCtrl = Get.put(AdminController());
@@ -31,9 +31,9 @@ class _AdminHomeViewState extends State<AdminHomeView> {
           body: IndexedStack(
             index: pageIndex,
             children: [
-              AdminScheduleView(),
-              AdminHitlistView(),
-              const AdminManageTabsView(),
+              TeacherQuizView(),
+              TeacherAssignmentsView(),
+              const TeacherManageTabsView(),
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
@@ -46,11 +46,11 @@ class _AdminHomeViewState extends State<AdminHomeView> {
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.arrow_circle_up_rounded),
-                label: "Schedule",
+                label: "Quiz",
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.arrow_circle_up_rounded),
-                label: "Task",
+                label: "Assignments",
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.arrow_circle_up_rounded),
@@ -61,7 +61,7 @@ class _AdminHomeViewState extends State<AdminHomeView> {
           floatingActionButton: FloatingActionButton(
             backgroundColor: AppTheme.primaryColor,
             onPressed: () async {
-              appNavPush(context, AdminAddNew());
+              appNavPush(context, AddNewTabsView());
             },
             child: const Icon(
               Icons.add,

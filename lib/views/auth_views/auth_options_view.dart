@@ -1,9 +1,8 @@
-import 'package:first_platoon/controllers/auth_controller.dart';
 import 'package:first_platoon/core/app_navigator.dart';
 import 'package:first_platoon/core/components/app_button.dart';
 import 'package:first_platoon/core/theme.dart';
-import 'package:first_platoon/views/auth_views/admin_login_view.dart';
-import 'package:first_platoon/views/auth_views/user_login_view.dart';
+import 'package:first_platoon/views/auth_views/teacher_login_view.dart';
+import 'package:first_platoon/views/auth_views/student_login_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -12,7 +11,7 @@ class AuthOptionsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ctrl = Get.put(AuthController());
+    // final ctrl = Get.put(AuthController());
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
@@ -22,39 +21,34 @@ class AuthOptionsView extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Image.asset("assets/images/class_guide.png"),
               Text(
-                "Management App",
-                style: Theme.of(context).textTheme.headline3!.copyWith(
+                "CLASS GUIDE",
+                style: Theme.of(context).textTheme.displaySmall!.copyWith(
                       color: Colors.black,
                       fontWeight: FontWeight.w100,
                     ),
               ),
-              SizedBox(height: Get.size.height * 0.05),
-              // Image.asset(
-              //   'assets/images/platoon.png',
-              //   scale: 2.5,
-              // ),
-              SizedBox(height: Get.size.height * 0.1),
+              SizedBox(height: Get.size.height * 0.07),
               SizedBox(
                 width: Get.size.width / 1.05,
                 child: kAppButton(
+                  onPressed: () {
+                    appNavPush(context, const TeacherLogin());
+                  },
                   padding: const EdgeInsets.only(
                       left: 30, top: 2, bottom: 2, right: 2),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
-                        "Login as Admin",
+                        "Login as Teacher",
                         style: TextStyle(
-                          // color: Colors.white,
                           fontSize: 18,
                           fontWeight: FontWeight.w600,
                         ),
                       ),
                       kAppButton(
-                        onPressed: () {
-                          appNavPush(context, const AdminLoginView());
-                        },
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 5),
                         color: AppTheme.kblueColor,
@@ -69,19 +63,25 @@ class AuthOptionsView extends StatelessWidget {
                 ),
               ),
               SizedBox(height: Get.size.height / 20),
-              Text("- - - - - Or - - - - -"),
+              const Text("- - - - - Or - - - - -"),
               SizedBox(height: Get.size.height / 20),
               SizedBox(
                 width: Get.size.width / 1.05,
                 child: kAppButton(
-                  padding:
-                      EdgeInsets.only(left: 30, top: 2, bottom: 2, right: 2),
+                  onPressed: () {
+                    appNavPush(
+                      context,
+                      const StudentLoginView(),
+                    );
+                  },
+                  padding: const EdgeInsets.only(
+                      left: 30, top: 2, bottom: 2, right: 2),
                   color: AppTheme.kblueColor,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
-                        "Login as User",
+                        "Login as Student",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 18,
@@ -89,12 +89,6 @@ class AuthOptionsView extends StatelessWidget {
                         ),
                       ),
                       kAppButton(
-                        onPressed: () {
-                          appNavPush(
-                            context,
-                            const UserLoginView(),
-                          );
-                        },
                         padding: const EdgeInsets.symmetric(
                             horizontal: 20, vertical: 5),
                         child: const Icon(

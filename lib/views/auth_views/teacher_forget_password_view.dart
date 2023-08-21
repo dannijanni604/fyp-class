@@ -4,8 +4,8 @@ import 'package:first_platoon/core/const.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AdminForgetPasswordView extends StatelessWidget {
-  const AdminForgetPasswordView({super.key});
+class TeacherForgetPasswordView extends StatelessWidget {
+  const TeacherForgetPasswordView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +13,9 @@ class AdminForgetPasswordView extends StatelessWidget {
     final formKey = GlobalKey<FormState>();
     final ctrl = Get.put(AuthController());
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Reset Password"),
+      ),
       body: SingleChildScrollView(
         child: SafeArea(
           child: Padding(
@@ -21,18 +24,8 @@ class AdminForgetPasswordView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                IconButton(
-                  onPressed: () {
-                    Get.back();
-                  },
-                  icon: const Icon(
-                    Icons.arrow_back_ios_new,
-                    size: 25,
-                  ),
-                ),
                 SizedBox(height: Get.size.height * 0.03),
-                Text("Welcome Again To First Platoon",
-                    style: Const.labelText()),
+                Text("Reset Your Password", style: Const.labelText()),
                 SizedBox(height: Get.size.height * 0.03),
                 const Text("Enter Email Address To Reset Forgotten Password"),
                 SizedBox(height: Get.size.height * 0.03),

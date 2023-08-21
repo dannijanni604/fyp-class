@@ -5,8 +5,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:first_platoon/core/app_navigator.dart';
 import 'package:first_platoon/core/components/snackbar.dart';
 import 'package:first_platoon/core/db.dart';
-import 'package:first_platoon/views/admin_view/admin_home_tabs.dart';
-import 'package:first_platoon/views/user_view/user_tabs_view.dart';
+import 'package:first_platoon/views/teacher_view/teacher_home_tabs.dart';
+import 'package:first_platoon/views/student_view/student_tabs_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -17,16 +17,16 @@ class AuthController extends GetxController {
   final auth = FirebaseAuth.instance;
   final GoogleSignIn googleSignIn = GoogleSignIn();
   RxBool onLogin = false.obs;
-  // user
+  // student
   final userCodecontroller = TextEditingController();
-  // admin
+  // teacher
   final adminNameController = TextEditingController();
   final adminFatherNameController = TextEditingController();
   final adminEmailController = TextEditingController();
   final adminPasswordController = TextEditingController();
   final groupIdController = TextEditingController();
 
-  // user var
+  // student var
 
   String? currentUserId = '';
   String? currentUserCode = '';
@@ -47,7 +47,7 @@ class AuthController extends GetxController {
         adminFatherNameController.clear();
         adminEmailController.clear();
         adminPasswordController.clear();
-        Get.off(() => const AdminHomeView());
+        Get.off(() => const TeacherHomeView());
       });
     } on FirebaseAuthException catch (e) {
       onLogin(false);
@@ -65,7 +65,7 @@ class AuthController extends GetxController {
       if (groupIdController.text.isNotEmpty) {
         var doc = await DB.groups.doc(groupIdController.text).get();
         if (!doc.exists) {
-          kerrorSnackbar(message: "Group is not exists");
+          kerrorSnackbar(message: "Group not exists");
           onLogin(false);
           return;
         }
@@ -98,7 +98,7 @@ class AuthController extends GetxController {
       onLogin(false);
       adminNameController.clear();
       adminEmailController.clear();
-      Get.offAll(() => const AdminHomeView());
+      Get.offAll(() => const TeacherHomeView());
     } on FirebaseAuthException catch (e) {
       onLogin(false);
       return kerrorSnackbar(message: e.toString());
@@ -156,7 +156,7 @@ class AuthController extends GetxController {
 
       if (isUserExist) {
         onLogin(false);
-        return appNavReplace(context, UserHomeView());
+        return appNavReplace(context, StudenthHomeView());
       } else {
         onLogin(false);
         return kerrorSnackbar(message: "User Did't Match Try Another Code");

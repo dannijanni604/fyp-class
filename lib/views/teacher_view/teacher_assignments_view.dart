@@ -1,7 +1,4 @@
-import 'dart:developer';
-
 import 'package:first_platoon/controllers/admin_controller.dart';
-import 'package:first_platoon/controllers/hitlist_controller.dart';
 import 'package:first_platoon/core/components/app_tile.dart';
 import 'package:first_platoon/core/const.dart';
 import 'package:first_platoon/core/db.dart';
@@ -10,18 +7,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
-class AdminHitlistView extends StatelessWidget {
-  AdminHitlistView({super.key});
+class TeacherAssignmentsView extends StatelessWidget {
+  TeacherAssignmentsView({super.key});
 
   final adminCtrl = Get.find<AdminController>();
 
   @override
   Widget build(BuildContext context) {
-    final ctrl = Get.put(HitlistController());
+    // final ctrl = Get.put(HitlistController());
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Text("Task"),
+        title: const Text("Assignments"),
       ),
       body: StreamBuilder(
         stream: DB.tasks
@@ -33,7 +30,7 @@ class AdminHitlistView extends StatelessWidget {
           if (snapshot.hasData) {
             return snapshot.data!.docs.isEmpty
                 ? const Center(
-                    child: Text("No Task"),
+                    child: Text("No Assignments"),
                   )
                 : ListView.builder(
                     itemCount: snapshot.data!.docs.length,
@@ -75,7 +72,7 @@ class AdminHitlistView extends StatelessWidget {
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
-                                          Text("Are you sure to delete?"),
+                                          const Text("Are you sure to delete?"),
                                           Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceEvenly,
@@ -88,13 +85,13 @@ class AdminHitlistView extends StatelessWidget {
                                                       .delete();
                                                   Get.back();
                                                 },
-                                                child: Text('Delete'),
+                                                child: const Text('Delete'),
                                               ),
                                               TextButton(
                                                 onPressed: () {
                                                   Get.back();
                                                 },
-                                                child: Text('Cancel'),
+                                                child: const Text('Cancel'),
                                               )
                                             ],
                                           )

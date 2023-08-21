@@ -1,9 +1,9 @@
-import 'package:first_platoon/views/admin_view/admin_manage/admin_manage_history_view.dart';
-import 'package:first_platoon/views/admin_view/admin_manage/admin_manage_view.dart';
+import 'package:first_platoon/views/teacher_view/teacher_manage/teacher_manage_history_view.dart';
+import 'package:first_platoon/views/teacher_view/teacher_manage/teacher_manage_assignments_view.dart';
 import 'package:flutter/material.dart';
 
-class AdminManageTabsView extends StatelessWidget {
-  const AdminManageTabsView({super.key});
+class TeacherManageTabsView extends StatelessWidget {
+  const TeacherManageTabsView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -15,17 +15,17 @@ class AdminManageTabsView extends StatelessWidget {
           automaticallyImplyLeading: false,
           title: const TabBar(tabs: [
             Tab(
-              text: "Manage Task",
+              text: "Manage Assignments",
             ),
             Tab(
-              text: "Task History",
+              text: "History",
             ),
           ]),
         ),
         body: TabBarView(
           children: [
-            AdminManageTaskView(),
-            AdminManageHistoryView(),
+            TeacherManageAssignmentsView(),
+            TeacherManageHistoryView(),
           ],
         ),
       ),

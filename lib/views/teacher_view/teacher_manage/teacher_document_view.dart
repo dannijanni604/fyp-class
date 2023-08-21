@@ -115,10 +115,6 @@ class DocumentView extends StatelessWidget {
                 }
               }),
             ),
-      // floatingActionButton: FloatingActionButton.extended(
-      //   onPressed: () {},
-      //   label: const Text("Open"),
-      // ),
     );
   }
 }

@@ -6,7 +6,7 @@ ksucessSnackbar({String message = " SUCCESS"}) {
     "SUCESS",
     message,
     backgroundColor: Colors.green.withOpacity(0.5),
-    duration: Duration(seconds: 2),
+    duration: const Duration(seconds: 2),
     dismissDirection: DismissDirection.down,
   );
 }
@@ -16,7 +16,7 @@ kerrorSnackbar({String message = " ERROR"}) {
     "ERROR",
     message,
     backgroundColor: Colors.red.withOpacity(0.5),
-    duration: Duration(seconds: 2),
+    duration: const Duration(seconds: 2),
     dismissDirection: DismissDirection.down,
   );
 }

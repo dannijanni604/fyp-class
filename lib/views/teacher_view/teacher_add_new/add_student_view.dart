@@ -4,8 +4,8 @@ import 'package:first_platoon/core/const.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AddMemberView extends StatelessWidget {
-  AddMemberView({super.key});
+class AddStudentView extends StatelessWidget {
+  AddStudentView({super.key});
 
   final ctrl = Get.find<AddCompaignsConteroller>();
   @override
@@ -19,13 +19,13 @@ class AddMemberView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text("Member Name"),
+              const Text("Student Name"),
               SizedBox(height: size.height * 0.01),
               TextFormField(
                 controller: ctrl.memberNameController,
                 validator: (val) {
                   if (val == null || val.isEmpty) {
-                    return "Enter Member Name";
+                    return "Enter Student Name";
                   } else {
                     return null;
                   }
@@ -52,7 +52,7 @@ class AddMemberView extends StatelessWidget {
                               onPressed: () {
                                 ctrl.addMember();
                               },
-                              label: "Generate User",
+                              label: "Generate Student",
                               padding: EdgeInsets.symmetric(vertical: 15),
                             ),
                             SizedBox(

@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,15 +15,15 @@ appTile({
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: Colors.white,
-        // border: Border.all(color: Colors.black26),
-        // boxShadow: const [
-        //   BoxShadow(
-        //     color: Colors.black12,
-        //     spreadRadius: 1,
-        //     blurRadius: 5,
-        //     offset: Offset(0, 1),
-        //   ),
-        // ],
+        border: Border.all(color: Colors.black26),
+        boxShadow: const [
+          BoxShadow(
+            color: Colors.black12,
+            spreadRadius: 1,
+            blurRadius: 5,
+            offset: Offset(0, 1),
+          ),
+        ],
       ),
       child: child,
     ),

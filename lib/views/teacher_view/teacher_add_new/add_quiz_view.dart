@@ -5,8 +5,8 @@ import 'package:first_platoon/core/functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class AddScheduleView extends StatelessWidget {
-  AddScheduleView({super.key});
+class AddQuizView extends StatelessWidget {
+  AddQuizView({super.key});
 
   final _key = GlobalKey<FormState>();
   final ctrl = Get.find<AddCompaignsConteroller>();
@@ -23,13 +23,13 @@ class AddScheduleView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text("Schedule"),
+              const Text("Quiz Details"),
               SizedBox(height: size.height * 0.01),
               TextFormField(
                 controller: ctrl.scheduleTaskController,
                 validator: (val) {
                   if (val == null || val.isEmpty) {
-                    return "Add Schedule";
+                    return "Add Quiz";
                   } else {
                     return null;
                   }
@@ -67,7 +67,7 @@ class AddScheduleView extends StatelessWidget {
               SizedBox(
                 height: size.height * 0.03,
               ),
-              const Text("Add Members"),
+              const Text("Add Students"),
               Obx(() {
                 return Wrap(
                   spacing: 2,
@@ -93,7 +93,7 @@ class AddScheduleView extends StatelessWidget {
               ),
               TextFormField(
                 decoration: const InputDecoration(
-                  hintText: "search members here",
+                  hintText: "search students here",
                 ),
                 controller: ctrl.scheduleMemberController,
                 onChanged: (v) {
@@ -130,7 +130,7 @@ class AddScheduleView extends StatelessWidget {
                       );
                     }
                     return const Center(
-                      child: Text("No User"),
+                      child: Text("No Student"),
                     );
                   },
                   onLoading: const Center(child: CircularProgressIndicator()),
@@ -150,11 +150,11 @@ class AddScheduleView extends StatelessWidget {
                                       ctrl.addSchedule();
                                     } else {
                                       kerrorSnackbar(
-                                          message: "Add Members List");
+                                          message: "Add Student List");
                                     }
                                   }
                                 },
-                                label: "Generate Schedule",
+                                label: "Generate Quiz",
                                 padding: EdgeInsets.symmetric(vertical: 15),
                               ),
                               SizedBox(

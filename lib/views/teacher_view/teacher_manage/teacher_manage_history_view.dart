@@ -1,16 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:first_platoon/controllers/admin_controller.dart';
-
 import 'package:first_platoon/core/components/app_tile.dart';
 import 'package:first_platoon/core/const.dart';
 import 'package:first_platoon/core/db.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../core/functions.dart';
 
-class AdminManageHistoryView extends StatelessWidget {
-  AdminManageHistoryView({super.key});
+class TeacherManageHistoryView extends StatelessWidget {
+  TeacherManageHistoryView({super.key});
   final adminCtrl = Get.find<AdminController>();
 
   @override
@@ -52,14 +50,6 @@ class AdminManageHistoryView extends StatelessWidget {
                                   color: snapshot.data!.docs[index]
                                       .data()['status'],
                                 ),
-                                // Chip(
-                                //   backgroundColor: statusColor(
-                                //     snapshot.data!.docs[index].data()['status'],
-                                //   ),
-                                //   label: Text(
-                                //     snapshot.data!.docs[index].data()['status'],
-                                //   ),
-                                // )
                               ],
                             ),
                           ],

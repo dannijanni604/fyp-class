@@ -71,7 +71,7 @@ class HitlistController extends GetxController {
       pickedFileUrls.clear();
       isClicked(false);
       Get.back();
-      ksucessSnackbar(message: "Task Submited SuccesFully");
+      ksucessSnackbar(message: "Assignment Submited SuccesFully");
     } catch (e) {
       isClicked(false);
       kerrorSnackbar(message: e.toString());

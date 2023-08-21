@@ -10,17 +10,6 @@ class ManageController extends GetxController {
   RxBool isDownloading = false.obs;
   String extension = "";
 
-  // bool? filterFileByExtension(String file) {
-  //   final splitpath = file.split('.').last;
-  //   final ext = splitpath.split('?').first;
-  //   if (ext == "png" || ext == "jpg" || ext == 'jpeg') {
-  //     log(ext);
-  //     isNotfile(true);
-  //     return isNotfile.value;
-  //   }
-  //   return isNotfile.value;
-  // }
-
   Future downloadAndOpenFile({String? url, String? fileName}) async {
     try {
       final file = await downloadFile(url, fileName);

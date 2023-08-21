@@ -9,11 +9,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:qr_flutter/qr_flutter.dart';
 import '../../controllers/admin_controller.dart';
 
-class AdminScheduleView extends StatelessWidget {
-  AdminScheduleView({super.key});
+class TeacherQuizView extends StatelessWidget {
+  TeacherQuizView({super.key});
 
   final authCtrl = Get.put(AuthController());
   final adminCtrl = Get.find<AdminController>();
@@ -22,7 +21,7 @@ class AdminScheduleView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: const Text("Schedule"),
+        title: const Text("Quiz"),
         actions: [
           IconButton(
             onPressed: () async {
@@ -35,12 +34,6 @@ class AdminScheduleView extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        // QrImage(
-                        //   data: adminCtrl.admin.groupId,
-                        //   version: QrVersions.auto,
-                        //   size: 180,
-                        //   gapless: false,
-                        // ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -84,7 +77,7 @@ class AdminScheduleView extends StatelessWidget {
         builder: ((context, snapshot) {
           if (snapshot.hasData) {
             return snapshot.data!.docs.isEmpty
-                ? const Center(child: Text("No Schdeule"))
+                ? const Center(child: Text("No Quiz"))
                 : ListView.builder(
                     itemCount: snapshot.data!.docs.length,
                     itemBuilder: ((context, index) {
@@ -107,14 +100,6 @@ class AdminScheduleView extends StatelessWidget {
                                     .toDate(),
                               ),
                             ),
-                            // Text("$initialDate"),
-                            // Padding(
-                            //   padding:
-                            //       const EdgeInsets.symmetric(horizontal: 5),
-                            //   child: Text(" - To - ",
-                            //       style: Theme.of(context).textTheme.button),
-                            // ),
-                            // Text("$endDate"),
                             const SizedBox(width: 5),
                             GestureDetector(
                               onTap: () {
@@ -126,7 +111,7 @@ class AdminScheduleView extends StatelessWidget {
                                       child: Column(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
-                                          Text("Are you sure to delete?"),
+                                          const Text("Are you sure to delete?"),
                                           Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceEvenly,
@@ -139,13 +124,13 @@ class AdminScheduleView extends StatelessWidget {
                                                       .delete();
                                                   Get.back();
                                                 },
-                                                child: Text('Delete'),
+                                                child: const Text('Delete'),
                                               ),
                                               TextButton(
                                                 onPressed: () {
                                                   Get.back();
                                                 },
-                                                child: Text('Cancel'),
+                                                child: const Text('Cancel'),
                                               )
                                             ],
                                           )
@@ -166,7 +151,6 @@ class AdminScheduleView extends StatelessWidget {
                     }),
                   );
           } else if (snapshot.hasError) {
-            // printInfo(info: snapshot.error.toString());
             log(snapshot.error.toString());
             print(snapshot.error);
 

@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:intl/intl.dart';
 
-class UserHitListHistoryView extends StatelessWidget {
-  const UserHitListHistoryView({super.key});
+class StudentAssignmentHistoryView extends StatelessWidget {
+  const StudentAssignmentHistoryView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,23 +29,21 @@ class UserHitListHistoryView extends StatelessWidget {
                   itemCount: snapshot.data!.docs.length,
                   itemBuilder: (context, index) {
                     return appTile(
-                      child: Expanded(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(snapshot.data!.docs[index].data()['task'],
-                                style: Const.labelText()),
-                            Text(DateFormat("MMM d").format(DateTime.now())),
-                            statusChip(
-                              label:
-                                  snapshot.data!.docs[index].data()['status'] ??
-                                      '',
-                              color:
-                                  snapshot.data!.docs[index].data()['status'] ??
-                                      '',
-                            ),
-                          ],
-                        ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(snapshot.data!.docs[index].data()['task'],
+                              style: Const.labelText()),
+                          Text(DateFormat("MMM d").format(DateTime.now())),
+                          statusChip(
+                            label:
+                                snapshot.data!.docs[index].data()['status'] ??
+                                    '',
+                            color:
+                                snapshot.data!.docs[index].data()['status'] ??
+                                    '',
+                          ),
+                        ],
                       ),
                     );
                   });
