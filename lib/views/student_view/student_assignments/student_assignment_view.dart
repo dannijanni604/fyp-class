@@ -90,6 +90,7 @@ showUserHitlitBottomSheet({
           return Container(
             padding: EdgeInsets.symmetric(vertical: 15, horizontal: 15),
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -122,7 +123,6 @@ showUserHitlitBottomSheet({
                           child: IconButton(
                             onPressed: () {
                               ctrl.picDocuments();
-                              Get.back();
                             },
                             icon: Icon(
                               Icons.image,
@@ -162,6 +162,13 @@ showUserHitlitBottomSheet({
                     ),
                   ),
                 ),
+                IconButton(
+                    onPressed: () {
+                      ctrl.pickedFile.clear();
+                      ctrl.pickedFileUrls.clear();
+                      ctrl.isClicked(false);
+                    },
+                    icon: Icon(Icons.cancel)),
                 ctrl.isClicked.value
                     ? const Center(
                         child: CircularProgressIndicator(),

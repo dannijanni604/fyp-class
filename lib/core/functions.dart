@@ -42,7 +42,7 @@ showMembersBottomSheet(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text("Task Members"),
+                  const Text("Assignment Members"),
                   GestureDetector(
                     onTap: () {
                       Get.back();
@@ -117,7 +117,7 @@ Color statusColor(String status) {
 
 Widget statusChip({String label = '', String? color}) {
   return Container(
-    padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 15),
+    padding: const EdgeInsets.symmetric(vertical: 6, horizontal: 3),
     decoration: BoxDecoration(
       color: statusColor(color!),
       borderRadius: BorderRadius.circular(50),

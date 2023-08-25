@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:first_platoon/controllers/manage_controller.dart';
+import 'package:first_platoon/controllers/manage_assignment_controller.dart';
 import 'package:flutter/material.dart';
 
 class DocumentView extends StatelessWidget {
@@ -9,7 +9,7 @@ class DocumentView extends StatelessWidget {
     required this.ctrl,
   });
   final List decoments;
-  final ManageController ctrl;
+  final ManageAssignmentController ctrl;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

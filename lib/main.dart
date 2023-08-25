@@ -24,11 +24,11 @@ void main() async {
       ),
     );
   }
-  runApp(const ManagementApp());
+  runApp(const ClassGuideApp());
 }
 
-class ManagementApp extends StatelessWidget {
-  const ManagementApp({super.key});
+class ClassGuideApp extends StatelessWidget {
+  const ClassGuideApp({super.key});
 
   @override
   Widget build(BuildContext context) {

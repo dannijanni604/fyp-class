@@ -5,8 +5,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:first_platoon/core/app_navigator.dart';
 import 'package:first_platoon/core/components/snackbar.dart';
 import 'package:first_platoon/core/db.dart';
-import 'package:first_platoon/views/teacher_view/teacher_home_tabs.dart';
 import 'package:first_platoon/views/student_view/student_tabs_view.dart';
+import 'package:first_platoon/views/teacher_view/teacher_home_tabs.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -130,6 +130,7 @@ class AuthController extends GetxController {
           currentUSerName = e.data()['name'];
           currentUserCode = e.data()['code'];
           currentUserId = e.id;
+          userCodecontroller.clear();
           storage.write("id", currentUserId);
           storage.write("code", currentUserCode);
           storage.write("name", currentUSerName);
@@ -143,7 +144,7 @@ class AuthController extends GetxController {
             case "operation-not-allowed":
               break;
             default:
-              kerrorSnackbar(message: e.toString());
+            // kerrorSnackbar(message: e.toString());
           }
         }
 
@@ -156,7 +157,7 @@ class AuthController extends GetxController {
 
       if (isUserExist) {
         onLogin(false);
-        return appNavReplace(context, StudenthHomeView());
+        return appNavReplace(context, StudentTabView());
       } else {
         onLogin(false);
         return kerrorSnackbar(message: "User Did't Match Try Another Code");

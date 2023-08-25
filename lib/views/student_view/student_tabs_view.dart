@@ -3,14 +3,14 @@ import 'package:first_platoon/views/student_view/student_assignments/student_ass
 import 'package:first_platoon/views/student_view/student_quiz_view.dart';
 import 'package:flutter/material.dart';
 
-class StudenthHomeView extends StatefulWidget {
-  const StudenthHomeView({super.key});
+class StudentTabView extends StatefulWidget {
+  const StudentTabView({super.key});
 
   @override
-  State<StudenthHomeView> createState() => _StudenthHomeViewState();
+  State<StudentTabView> createState() => _StudentTabViewState();
 }
 
-class _StudenthHomeViewState extends State<StudenthHomeView> {
+class _StudentTabViewState extends State<StudentTabView> {
   int pageIndex = 0;
   @override
   Widget build(BuildContext context) {

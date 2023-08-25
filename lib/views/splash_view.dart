@@ -20,7 +20,7 @@ class _SplashViewState extends State<SplashView> {
     Future.delayed(const Duration(seconds: 2), () {
       final user = GetStorage().read('code');
       if (user != null) {
-        Get.off(() => const StudenthHomeView());
+        Get.off(() => const StudentTabView());
       } else if (FirebaseAuth.instance.currentUser != null) {
         return Get.off(() => const TeacherHomeView());
       } else {

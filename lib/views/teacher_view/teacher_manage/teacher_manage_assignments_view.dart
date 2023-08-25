@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:first_platoon/controllers/admin_controller.dart';
-import 'package:first_platoon/controllers/manage_controller.dart';
+import 'package:first_platoon/controllers/manage_assignment_controller.dart';
 import 'package:first_platoon/core/components/app_button.dart';
 import 'package:first_platoon/core/components/app_tile.dart';
 import 'package:first_platoon/core/components/snackbar.dart';
@@ -13,7 +13,7 @@ import 'package:get/get.dart';
 class TeacherManageAssignmentsView extends StatelessWidget {
   TeacherManageAssignmentsView({super.key});
   final adminCtrl = Get.find<AdminController>();
-  final ctrl = Get.put(ManageController());
+  final ctrl = Get.put(ManageAssignmentController());
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,7 @@ class TeacherManageAssignmentsView extends StatelessWidget {
 Future showDialogToCompleteTask(
   BuildContext context,
   int index,
-  ManageController ctrl,
+  ManageAssignmentController ctrl,
   AsyncSnapshot<QuerySnapshot<Map<String, dynamic>>> snapshot,
 ) async {
   showDialog(
