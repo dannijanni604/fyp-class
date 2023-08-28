@@ -75,6 +75,7 @@ class HitlistController extends GetxController {
     } catch (e) {
       isClicked(false);
       kerrorSnackbar(message: e.toString());
+      printError(info: e.toString());
     } finally {
       isClicked(false);
     }

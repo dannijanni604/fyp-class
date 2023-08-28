@@ -7,6 +7,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
+import '../../core/app_navigator.dart';
+import '../../core/theme.dart';
+import 'teacher_add_new/add_new_tabs_view.dart';
+
 class TeacherAssignmentsView extends StatelessWidget {
   TeacherAssignmentsView({super.key});
 
@@ -19,6 +23,15 @@ class TeacherAssignmentsView extends StatelessWidget {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         title: const Text("Assignments"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: AppTheme.primaryColor,
+        onPressed: () async {
+          appNavPush(context, AddNewTabsView());
+        },
+        child: const Icon(
+          Icons.add,
+        ),
       ),
       body: StreamBuilder(
         stream: DB.tasks

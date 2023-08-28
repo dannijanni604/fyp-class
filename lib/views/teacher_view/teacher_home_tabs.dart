@@ -1,8 +1,10 @@
 import 'package:first_platoon/controllers/admin_controller.dart';
+import 'package:first_platoon/controllers/group_chat_controller.dart';
 import 'package:first_platoon/controllers/quiz_controller.dart';
 import 'package:first_platoon/core/app_navigator.dart';
 import 'package:first_platoon/core/functions.dart';
 import 'package:first_platoon/core/theme.dart';
+import 'package:first_platoon/views/teacher_view/teacher_chat_view.dart';
 import 'package:first_platoon/views/teacher_view/teacher_add_new/add_new_tabs_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -21,6 +23,7 @@ class _TeacherHomeViewState extends State<TeacherHomeView> {
   int pageIndex = 0;
   final ctrl = Get.put(ScheduleController());
   final adminCtrl = Get.put(AdminController());
+  final groupChatCtrl = Get.put(GroupChatController());
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +36,13 @@ class _TeacherHomeViewState extends State<TeacherHomeView> {
             children: [
               TeacherQuizView(),
               TeacherAssignmentsView(),
+              const TeacherChatView(),
               const TeacherManageTabsView(),
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
+            selectedItemColor: AppTheme.kprimaryColor,
+            type: BottomNavigationBarType.fixed,
             onTap: (int newIndex) {
               setState(() {
                 pageIndex = newIndex;
@@ -53,19 +59,14 @@ class _TeacherHomeViewState extends State<TeacherHomeView> {
                 label: "Assignments",
               ),
               BottomNavigationBarItem(
+                icon: Icon(Icons.chat_outlined),
+                label: "Group Chat",
+              ),
+              BottomNavigationBarItem(
                 icon: Icon(Icons.arrow_circle_up_rounded),
                 label: "Manage",
               ),
             ],
-          ),
-          floatingActionButton: FloatingActionButton(
-            backgroundColor: AppTheme.primaryColor,
-            onPressed: () async {
-              appNavPush(context, AddNewTabsView());
-            },
-            child: const Icon(
-              Icons.add,
-            ),
           ),
         ),
         onLoading: const Scaffold(

@@ -20,3 +20,10 @@ kerrorSnackbar({String message = " ERROR"}) {
     dismissDirection: DismissDirection.down,
   );
 }
+
+sendAlert(String message) async {
+  Get.snackbar("Successful", message,
+      margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+      duration: const Duration(seconds: 2),
+      snackPosition: SnackPosition.TOP);
+}

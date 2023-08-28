@@ -10,6 +10,9 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import '../../controllers/admin_controller.dart';
+import '../../core/app_navigator.dart';
+import '../../core/theme.dart';
+import 'teacher_add_new/add_new_tabs_view.dart';
 
 class TeacherQuizView extends StatelessWidget {
   TeacherQuizView({super.key});
@@ -68,6 +71,15 @@ class TeacherQuizView extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: AppTheme.primaryColor,
+        onPressed: () async {
+          appNavPush(context, AddNewTabsView());
+        },
+        child: const Icon(
+          Icons.add,
+        ),
       ),
       body: StreamBuilder(
         stream: DB.schedules
