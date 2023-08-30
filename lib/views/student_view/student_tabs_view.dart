@@ -2,6 +2,7 @@ import 'package:first_platoon/core/functions.dart';
 import 'package:first_platoon/views/student_view/student_assignments/student_assignment_tabs.dart';
 import 'package:first_platoon/views/student_view/student_chat_view.dart';
 import 'package:first_platoon/views/student_view/student_quiz_view.dart';
+import 'package:first_platoon/views/teacher_view/teacher_chat_view.dart';
 import 'package:flutter/material.dart';
 
 class StudentTabView extends StatefulWidget {
@@ -20,10 +21,11 @@ class _StudentTabViewState extends State<StudentTabView> {
       child: Scaffold(
         body: IndexedStack(
           index: pageIndex,
-          children: const [
+          children: [
             StudentQuizView(),
             StudentAssignmentTabs(),
-            StudentChatView(),
+            // StudentChatView(),
+            TeacherChatView(),
           ],
         ),
         bottomNavigationBar: BottomNavigationBar(
@@ -37,7 +39,7 @@ class _StudentTabViewState extends State<StudentTabView> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.arrow_circle_up_rounded), label: "Quiz"),
             BottomNavigationBarItem(
-                icon: Icon(Icons.arrow_circle_up_rounded), label: "Assignmnt"),
+                icon: Icon(Icons.arrow_circle_up_rounded), label: "Assignment"),
             BottomNavigationBarItem(
                 icon: Icon(Icons.chat_outlined), label: "Group Chat"),
           ],

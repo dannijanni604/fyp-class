@@ -23,7 +23,6 @@ class _TeacherHomeViewState extends State<TeacherHomeView> {
   int pageIndex = 0;
   final ctrl = Get.put(ScheduleController());
   final adminCtrl = Get.put(AdminController());
-  final groupChatCtrl = Get.put(GroupChatController());
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +35,8 @@ class _TeacherHomeViewState extends State<TeacherHomeView> {
             children: [
               TeacherQuizView(),
               TeacherAssignmentsView(),
-              const TeacherChatView(),
               const TeacherManageTabsView(),
+              TeacherChatView(),
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
@@ -59,12 +58,12 @@ class _TeacherHomeViewState extends State<TeacherHomeView> {
                 label: "Assignments",
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.chat_outlined),
-                label: "Group Chat",
-              ),
-              BottomNavigationBarItem(
                 icon: Icon(Icons.arrow_circle_up_rounded),
                 label: "Manage",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.chat_outlined),
+                label: "Group Chat",
               ),
             ],
           ),

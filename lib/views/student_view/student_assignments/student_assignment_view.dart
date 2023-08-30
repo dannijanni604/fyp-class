@@ -17,7 +17,6 @@ class StudentAssignmentView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final id = GetStorage().read('id');
-    log("Id ID $id");
 
     return StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
       stream: DB.tasks

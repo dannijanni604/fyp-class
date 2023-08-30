@@ -20,7 +20,7 @@ class StudentChatView extends StatelessWidget {
             child: ListView.builder(
               itemCount: 10,
               itemBuilder: (context, index) {
-                return AppTextCard();
+                // return AppTextCard();
               },
             ),
           ),

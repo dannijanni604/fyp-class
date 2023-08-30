@@ -30,7 +30,7 @@ class StudentQuizView extends StatelessWidget {
         ],
       ),
       body: StreamBuilder(
-        stream: DB.schedules.where('members', arrayContains: id).snapshots(),
+        stream: DB.schedules.where('members', arrayContains: [id]).snapshots(),
         builder: ((context, snapshot) {
           if (snapshot.hasData) {
             return snapshot.data!.docs.isEmpty
