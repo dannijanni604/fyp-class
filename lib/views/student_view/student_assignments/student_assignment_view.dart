@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:first_platoon/controllers/assignment_controller.dart';
+import 'package:first_platoon/controllers/hitlist_controller.dart';
 import 'package:first_platoon/core/components/app_button.dart';
 import 'package:first_platoon/core/components/app_tile.dart';
 import 'package:first_platoon/core/const.dart';

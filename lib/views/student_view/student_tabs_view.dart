@@ -1,6 +1,5 @@
 import 'package:first_platoon/core/functions.dart';
 import 'package:first_platoon/views/student_view/student_assignments/student_assignment_tabs.dart';
-import 'package:first_platoon/views/student_view/student_chat_view.dart';
 import 'package:first_platoon/views/student_view/student_quiz_view.dart';
 import 'package:first_platoon/views/teacher_view/teacher_chat_view.dart';
 import 'package:flutter/material.dart';
